@@ -1,50 +1,1209 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ad Watch Rewards</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Digital Marketing Expert | Fiverr Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00ff88;
+            --secondary-color: #ff00ff;
+            --accent-color: #00ffff;
+            --dark-bg: rgba(10, 10, 20, 0.95);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #ffffff;
+            --text-dark: #000000;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-neon: linear-gradient(45deg, #00ff88, #00ffff, #ff00ff, #ffff00);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #000;
+            color: var(--text-light);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Animated Background with GIFs */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 1.5s ease-in-out;
+            filter: brightness(0.3);
+        }
+
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(0, 255, 136, 0.1) 0%, 
+                rgba(255, 0, 255, 0.1) 50%, 
+                rgba(0, 255, 255, 0.1) 100%);
+            z-index: -1;
+            animation: overlayAnimation 10s ease-in-out infinite;
+        }
+
+        @keyframes overlayAnimation {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Particle Effects */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Ultra Modern Stats Bar */
+        .stats-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark-bg);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--primary-color);
+            z-index: 1000;
+            padding: 12px 10px;
+            box-shadow: 0 5px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .stats-container {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .stats-track {
+            display: flex;
+            animation: slideStats 30s linear infinite;
+            gap: 30px;
+        }
+
+        @keyframes slideStats {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .stat-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px;
+            background: var(--glass-bg);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            white-space: nowrap;
+            min-width: fit-content;
+        }
+
+        .stat-icon {
+            font-size: 20px;
+            animation: iconPulse 2s infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+        }
+
+        .stat-value {
+            font-size: 16px;
+            font-weight: 700;
+            background: var(--gradient-neon);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Main Container */
+        .main-container {
+            position: relative;
+            z-index: 10;
+            padding: 100px 20px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: heroEntry 1s ease-out;
+        }
+
+        @keyframes heroEntry {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(28px, 8vw, 72px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: var(--gradient-neon);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 4s ease infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(14px, 3vw, 24px);
+            color: var(--accent-color);
+            font-weight: 300;
+            animation: subtitleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes subtitleGlow {
+            0%, 100% { text-shadow: 0 0 20px rgba(0, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 40px rgba(0, 255, 255, 0.8); }
+        }
+
+        /* Gigs Showcase Section */
+        .gigs-showcase {
+            position: relative;
+            margin: 100px auto;
+            max-width: 800px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Central Profile */
+        .profile-hub {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            padding: 5px;
+            z-index: 100;
+            animation: profilePulse 3s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes profilePulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 50px rgba(0, 255, 136, 0.8),
+                           0 0 100px rgba(255, 0, 255, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 80px rgba(0, 255, 136, 1),
+                           0 0 150px rgba(255, 0, 255, 0.6);
+            }
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Orbiting Gigs */
+        .gigs-orbit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: orbitRotate 30s linear infinite;
+        }
+
+        @keyframes orbitRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .gig-card {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.4);
+        }
+
+        .gig-card:hover {
+            transform: scale(1.15) translateZ(50px);
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.6);
+            border-color: var(--accent-color);
+            z-index: 200;
+        }
+
+        .gig-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gig-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gig-card:nth-child(1) {
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .gig-card:nth-child(2) {
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .gig-card:nth-child(3) {
+            top: 50%;
+            left: -20px;
+            transform: translateY(-50%);
+        }
+
+        /* Ultra Modern Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 3000;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.98), rgba(40, 20, 60, 0.98));
+            border: 2px solid var(--primary-color);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 0 100px rgba(0, 255, 136, 0.5);
+            animation: modalSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translate(-50%, -50%) scale(0.7) rotateX(20deg);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, -50%) scale(1) rotateX(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-title {
+            font-size: clamp(24px, 5vw, 36px);
+            font-weight: 700;
+            background: var(--gradient-neon);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s ease infinite;
+            margin-bottom: 10px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg) scale(1.1);
+            background: var(--primary-color);
+            color: var(--text-dark);
+        }
+
+        .modal-body {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .modal-body strong {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .modal-body ul li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .modal-body ul li:before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-action {
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: var(--text-light);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--text-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-top: 100px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.8), rgba(40, 20, 60, 0.8));
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-title {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient-neon);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 3s ease infinite;
+        }
+
+        .contact-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--glass-bg);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 25px;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+        }
+
+        .contact-card:hover:before {
+            opacity: 0.1;
+        }
+
+        .contact-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-name {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fiverr-card { border-image: linear-gradient(45deg, #1dbf73, #00ff88) 1; }
+        .facebook-card { border-image: linear-gradient(45deg, #4267B2, #00ffff) 1; }
+        .whatsapp-card { border-image: linear-gradient(45deg, #25D366, #00ff88) 1; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .stats-bar {
+                padding: 8px 5px;
+            }
+
+            .stat-box {
+                padding: 6px 12px;
+                gap: 8px;
+            }
+
+            .stat-label {
+                font-size: 10px;
+            }
+
+            .stat-value {
+                font-size: 14px;
+            }
+
+            .main-container {
+                padding: 80px 15px 30px;
+            }
+
+            .gigs-showcase {
+                height: 400px;
+                margin: 60px auto;
+            }
+
+            .profile-hub {
+                width: 120px;
+                height: 120px;
+            }
+
+            .gig-card {
+                width: 100px;
+                height: 100px;
+            }
+
+            .modal-content {
+                padding: 30px 20px;
+                width: 95%;
+                border-radius: 20px;
+            }
+
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+
+            .btn-action {
+                padding: 12px 25px;
+                font-size: 12px;
+            }
+
+            .contact-section {
+                padding: 40px 15px;
+                margin-top: 60px;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 15px;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .contact-icon {
+                font-size: 28px;
+            }
+
+            .contact-name {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                letter-spacing: 0;
+            }
+
+            .gigs-showcase {
+                height: 350px;
+            }
+
+            .gig-card {
+                width: 80px;
+                height: 80px;
+                border-width: 2px;
+            }
+
+            .profile-hub {
+                width: 100px;
+                height: 100px;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+
+            .btn-action {
+                width: 100%;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 5000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+    </style>
 </head>
 <body>
-  <h1>Welcome to Ad Watch Rewards 🚀</h1>
-  <button id="loginBtn">Login with Google</button>
-  <p id="userInfo"></p>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
 
-  <!-- Firebase SDKs -->
-  <script type="module">
-    // Import Firebase
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-    import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+    <!-- Animated Background -->
+    <div class="animated-background" id="animatedBg"></div>
+    <div class="background-overlay"></div>
 
-    // ✅ Your Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyDaAMcSZSigXawYiD7ThoB-kXMdoa9cgyY",
-      authDomain: "adwatchrewardsapp.firebaseapp.com",
-      projectId: "adwatchrewardsapp",
-      storageBucket: "adwatchrewardsapp.firebasestorage.app",
-      messagingSenderId: "782268735936",
-      appId: "1:782268735936:web:ea82e5be5d0f44949ba825",
-      measurementId: "G-4NG2564HTK"
-    };
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stats-track">
+                <!-- First set -->
+                <div class="stat-box">
+                    <span class="stat-icon">📊</span>
+                    <div>
+                        <div class="stat-label">Daily Traffic</div>
+                        <div class="stat-value" id="traffic1">287,459</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">💰</span>
+                    <div>
+                        <div class="stat-label">AdSense</div>
+                        <div class="stat-value" id="adsense1">$3,847</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">💎</span>
+                    <div>
+                        <div class="stat-label">AdsTerra</div>
+                        <div class="stat-value" id="adsterra1">$2,195</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">🚀</span>
+                    <div>
+                        <div class="stat-label">Total Revenue</div>
+                        <div class="stat-value" id="revenue1">$6,042</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">👥</span>
+                    <div>
+                        <div class="stat-label">Active Users</div>
+                        <div class="stat-value" id="users1">45,892</div>
+                    </div>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="stat-box">
+                    <span class="stat-icon">📊</span>
+                    <div>
+                        <div class="stat-label">Daily Traffic</div>
+                        <div class="stat-value">287,459</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">💰</span>
+                    <div>
+                        <div class="stat-label">AdSense</div>
+                        <div class="stat-value">$3,847</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">💎</span>
+                    <div>
+                        <div class="stat-label">AdsTerra</div>
+                        <div class="stat-value">$2,195</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">🚀</span>
+                    <div>
+                        <div class="stat-label">Total Revenue</div>
+                        <div class="stat-value">$6,042</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-icon">👥</span>
+                    <div>
+                        <div class="stat-label">Active Users</div>
+                        <div class="stat-value">45,892</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    // ✅ Login Button
-    document.getElementById("loginBtn").addEventListener("click", async () => {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">Digital Marketing Expert</h1>
+            <p class="hero-subtitle">Transform Your Website Into A Money-Making Machine</p>
+        </section>
 
-      // Save user in Firestore
-      await setDoc(doc(db, "users", user.uid), {
-        name: user.displayName,
-        email: user.email,
-        coins: 0
-      }, { merge: true });
+        <!-- Gigs Showcase -->
+        <section class="gigs-showcase">
+            <div class="profile-hub">
+                <img src="https://fiverr-res.cloudinary.com/image/upload/t_profile_original,q_auto,f_auto/v1/attachments/profile/photo/101f813d69af351847655a1835380b57-1753291055836/6e963f72-e1d0-4e8c-9261-5be1bd2295bf.png" 
+                     alt="Profile" 
+                     class="profile-img">
+            </div>
+            <div class="gigs-orbit">
+                <div class="gig-card" onclick="openModal('gig1')">
+                    <img src="https://fiverr-res.cloudinary.com/images/t_small_thumbnail,q_auto,f_auto/gigs/442809884/original/ccac5d9af334945965528c01563d6622ca5281b2/a-reward-points-website-for-task-based-user-engagement.png" 
+                         alt="AdsTerra Earnings">
+                </div>
+                <div class="gig-card" onclick="openModal('gig2')">
+                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/460467657/original/a35604e50c698811c1b4ac196d9f42dda16b87dc/get-adsense-approval-in-5-days.jpg" 
+                         alt="AdSense Approval">
+                </div>
+                <div class="gig-card" onclick="openModal('gig3')">
+                    <img src="https://diib.com/learn/wp-content/uploads/2020/06/website-traffic-estimator-cover.jpg" 
+                         alt="Traffic Methods">
+                </div>
+            </div>
+        </section>
 
-      document.getElementById("userInfo").innerText = "Hello " + user.displayName;
-    });
-  </script>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-subtitle">Ready to scale your online business?</p>
+            <div class="contact-grid">
+                <a href="https://www.fiverr.com/nadeembugti1" target="_blank" class="contact-card fiverr-card">
+                    <i class="fab fa-figma contact-icon" style="color: #1dbf73;"></i>
+                    <div class="contact-name">Fiverr</div>
+                </a>
+                <a href="https://www.facebook.com/Blackhatady" target="_blank" class="contact-card facebook-card">
+                    <i class="fab fa-facebook contact-icon" style="color: #4267B2;"></i>
+                    <div class="contact-name">Facebook</div>
+                </a>
+                <a href="https://wa.me/+923330737987" target="_blank" class="contact-card whatsapp-card">
+                    <i class="fab fa-whatsapp contact-icon" style="color: #25D366;"></i>
+                    <div class="contact-name">WhatsApp</div>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="gig1Modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('gig1')">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-header">
+                <h2 class="modal-title">AdsTerra Earning Website & Traffic Method</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Welcome to Your Website Growth Package!</strong></p>
+                <p>Transform your website into a revenue-generating powerhouse with our proven methods.</p>
+                
+                <p><strong>Demo Websites:</strong></p>
+                <ul>
+                    <li>rangwanii0007.github.io/firbase/</li>
+                    <li>rangwanii0007.github.io/watch.4433/</li>
+                </ul>
+                
+                <p><strong>🚀 Increase your revenue by 100X!</strong></p>
+                <p>We help you build and rank your website using GitHub or Blogger, with free domain & hosting, expert support, and a revenue-driven plan.</p>
+                
+                <ul>
+                    <li>Free Domain & Hosting Setup</li>
+                    <li>Professional Website Development</li>
+                    <li>Traffic Generation Methods</li>
+                    <li>Revenue Optimization Strategies</li>
+                    <li>24/7 Expert Support</li>
+                </ul>
+            </div>
+            <div class="modal-actions">
+                <a href="https://www.fiverr.com/nadeembugti1/a-reward-points-website-for-task-based-user-engagement" 
+                   target="_blank" 
+                   class="btn-action btn-primary">Order on Fiverr</a>
+                <button class="btn-action btn-secondary" onclick="closeModal('gig1')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="gig2Modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('gig2')">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-header">
+                <h2 class="modal-title">AdSense Approval in 5 Days - Guaranteed!</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Get Your AdSense Approval Fast & Guaranteed!</strong></p>
+                
+                <p><strong>Services Included:</strong></p>
+                <ul>
+                    <li>Full Web Optimization for AdSense</li>
+                    <li>Manual Fixing of All Errors</li>
+                    <li>High-Quality Content Optimization</li>
+                    <li>Complete Policy Compliance Check</li>
+                    <li>Guaranteed Google AdSense Approval</li>
+                    <li>24/7 Support Until Approval</li>
+                </ul>
+                
+                <p><strong>We Fix These Common Errors:</strong></p>
+                <ul>
+                    <li>Low Value Content Issues</li>
+                    <li>Valuable Inventory: No Content</li>
+                    <li>Navigation Violations</li>
+                    <li>Privacy Policy Errors</li>
+                </ul>
+                
+                <p><strong>Why Choose Us?</strong></p>
+                <p>✅ 100% AdSense-Safe Methods<br>
+                ✅ Fast Approval Process<br>
+                ✅ Expert in Web Monetization<br>
+                ✅ Experienced in Google AdSense & AdX</p>
+            </div>
+            <div class="modal-actions">
+                <a href="https://www.fiverr.com/nadeembugti1/get-adsense-approval-in-5-days" 
+                   target="_blank" 
+                   class="btn-action btn-primary">Order on Fiverr</a>
+                <button class="btn-action btn-secondary" onclick="closeModal('gig2')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="gig3Modal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeModal('gig3')">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-header">
+                <h2 class="modal-title">Unlimited Traffic Method - Guaranteed Results!</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Scale Your Website Traffic & Revenue!</strong></p>
+                
+                <p><strong>⭐ STANDARD PACKAGE - $260 USDT</strong></p>
+                <ul>
+                    <li>Complete SEO Setup</li>
+                    <li>Traffic Generation Methods</li>
+                    <li>Reach $500 revenue in 10 days</li>
+                    <li>Full Support Guarantee</li>
+                    <li>Proven Traffic Sources</li>
+                </ul>
+                
+                <p><strong>🎯 BUMPER OFFER - $520 USDT</strong></p>
+                <ul>
+                    <li>Everything in Standard Package</li>
+                    <li>Reach $2,000 revenue in 30 days</li>
+                    <li>Premium Earning Course Included</li>
+                    <li>24/7 VIP Support</li>
+                    <li>Advanced Monetization Strategies</li>
+                    <li>Private Mastermind Access</li>
+                </ul>
+                
+                <p><strong>Perfect For:</strong></p>
+                <p>Whether you're looking to earn online, launch a blog, or build an affiliate site - we'll make it happen!</p>
+                <p>🚀 Let's start your online income journey today!</p>
+            </div>
+            <div class="modal-actions">
+                <a href="https://www.fiverr.com/nadeembugti1" 
+                   target="_blank" 
+                   class="btn-action btn-primary">Order on Fiverr</a>
+                <button class="btn-action btn-secondary" onclick="closeModal('gig3')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Background GIFs rotation
+        const backgroundImages = [
+            'https://greenkeydigital.com/wp-content/uploads/2023/09/Google-Analytics-480p-230909.gif',
+            'https://clarity.microsoft.com/blog/wp-content/uploads/2021/10/1.-Click-bar-1024x640-1.jpg',
+            'https://xpon.ai/wp-content/uploads/2023/02/Create-account.gif',
+            'https://miro.medium.com/1*i44-Of-ZOmbyWoU8C2USLw.gif',
+            'https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_portfolio_project_grid/v1/attachments/project_item/attachment/639f6a994f854a1606cd0ae3dd3c3048-1705902793247/Introducing_the_redesigned_AdMob_with_new_tools_that_make_it_even_easier_t.gif',
+            'https://assets.androidwedakarayo.com/content/images/2020/05/Affiliate-Marketing-android-wedakarayo.gif'
+        ];
+
+        let currentBgIndex = 0;
+        const bgElement = document.getElementById('animatedBg');
+
+        function changeBackground() {
+            bgElement.style.opacity = '0';
+            setTimeout(() => {
+                currentBgIndex = (currentBgIndex + 1) % backgroundImages.length;
+                bgElement.style.backgroundImage = `url('${backgroundImages[currentBgIndex]}')`;
+                bgElement.style.opacity = '1';
+            }, 1500);
+        }
+
+        // Set initial background
+        bgElement.style.backgroundImage = `url('${backgroundImages[0]}')`;
+        
+        // Change background every 15 seconds
+        setInterval(changeBackground, 15000);
+
+        // Create particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 20 : 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Update Stats
+        function updateStats() {
+            const stats = {
+                traffic: document.getElementById('traffic1'),
+                adsense: document.getElementById('adsense1'),
+                adsterra: document.getElementById('adsterra1'),
+                revenue: document.getElementById('revenue1'),
+                users: document.getElementById('users1')
+            };
+
+            setInterval(() => {
+                // Update traffic
+                const currentTraffic = parseInt(stats.traffic.textContent.replace(/,/g, ''));
+                const newTraffic = currentTraffic + Math.floor(Math.random() * 1000);
+                stats.traffic.textContent = newTraffic.toLocaleString();
+
+                // Update AdSense
+                const currentAdsense = parseFloat(stats.adsense.textContent.replace('$', '').replace(',', ''));
+                const newAdsense = currentAdsense + (Math.random() * 50);
+                stats.adsense.textContent = '$' + newAdsense.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+                // Update AdsTerra
+                const currentAdsterra = parseFloat(stats.adsterra.textContent.replace('$', '').replace(',', ''));
+                const newAdsterra = currentAdsterra + (Math.random() * 30);
+                stats.adsterra.textContent = '$' + newAdsterra.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+                // Update Revenue
+                stats.revenue.textContent = '$' + (newAdsense + newAdsterra).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+                // Update Users
+                const currentUsers = parseInt(stats.users.textContent.replace(/,/g, ''));
+                const newUsers = currentUsers + Math.floor(Math.random() * 100);
+                stats.users.textContent = newUsers.toLocaleString();
+            }, 3000);
+        }
+
+        updateStats();
+
+        // Modal functions
+        function openModal(gigId) {
+            document.getElementById(gigId + 'Modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(gigId) {
+            document.getElementById(gigId + 'Modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on background click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Scroll to top functionality
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Hide loader when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
